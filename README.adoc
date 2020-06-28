@@ -1,4 +1,5 @@
 # Testing-in-JUnit-AssertJ
 
-In diesem Repository befinden sich die zugehörigen Dateien für mein YouTube Video!
+In diesem Repository findest du die Beispieldateien für mein Video (Testen von Collections mit AssertJ)
 
+Der Link zum Video folgt hier:
