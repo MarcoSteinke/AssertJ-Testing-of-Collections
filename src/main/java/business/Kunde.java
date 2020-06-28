@@ -26,7 +26,10 @@ public class Kunde {
         return this.emailAddress;
     }
 
-    @Override
+    public boolean equals(Kunde kunde) {
+        return this.fullName.equals(kunde.fullName) && this.emailAddress.equals(kunde.getEmailAddress());
+    }
+
     public String toString() {
         return fullName + "\t" + emailAddress.getValue();
     }

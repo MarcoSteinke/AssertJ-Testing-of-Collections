@@ -10,6 +10,9 @@ public class Main {
 
         Kunde kunde1 = Kunde.create("Max Mustermann", "maxmustermann@hhu.de");
         Kunde kunde2 = Kunde.create("Maria Musterfrau", "mmusterfrau@hhu.de");
+        Kunde kunde3 = Kunde.create("Eva M", "evam@hhu.de");
+        Kunde kunde4 = Kunde.create("Mark S", "marks@hhu.de");
+
 
         app.storeKunde(kunde1);
         app.storeKunde(kunde2);

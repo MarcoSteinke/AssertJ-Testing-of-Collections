@@ -7,11 +7,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class KundenDatenbank implements Datenbank {
+public class TestKundenDatenbank implements Datenbank {
 
-    private HashMap<String, Kunde> database;
+    public HashMap<String, Kunde> database;
 
-    public KundenDatenbank() {
+    public TestKundenDatenbank() {
         this.database = new HashMap<String, Kunde>();
     }
 
@@ -22,6 +22,7 @@ public class KundenDatenbank implements Datenbank {
 
     @Override
     public List<Kunde> findAllKunden() {
+
         return this.database.entrySet()
                 .stream()
                 .map((entry) -> entry.getValue())
@@ -31,6 +32,7 @@ public class KundenDatenbank implements Datenbank {
     @Override
     public void save(Kunde kunde) {
 
-        this.database.put(kunde.getEmailAddress().getValue(), kunde);
+        if (kunde != null)
+            this.database.put(kunde.getEmailAddress().getValue(), kunde);
     }
 }
