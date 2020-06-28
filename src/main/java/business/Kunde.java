@@ -5,24 +5,29 @@ import business.annotation.Id;
 public class Kunde {
 
     @Id
-    Email email;
+    EmailAddress emailAddress;
+
     String fullName;
 
     private Kunde(String fullName, String email) {
         this.fullName = fullName;
-        this.email = new Email(email);
+        this.emailAddress = new EmailAddress(email);
+    }
+
+    public String getFullName() {
+        return fullName;
     }
 
     public static Kunde create(String fullName, String email) {
         return new Kunde(fullName, email);
     }
 
-    public Email getEmail() {
-        return this.email;
+    public EmailAddress getEmailAddress() {
+        return this.emailAddress;
     }
 
     @Override
     public String toString() {
-        return fullName + "\t" + email.getValue();
+        return fullName + "\t" + emailAddress.getValue();
     }
 }

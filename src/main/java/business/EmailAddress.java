@@ -2,16 +2,16 @@ package business;
 
 import java.util.Objects;
 
-public class Email {
+public class EmailAddress {
 
     String value;
 
-    public Email(String value) {
+    public EmailAddress(String value) {
         this.value = value;
     }
 
-    public boolean equals(Email email) {
-        return this.value.equals(email.value);
+    public boolean equals(EmailAddress emailAddress) {
+        return this.value.equals(emailAddress.value);
     }
 
     public int hashCode() {

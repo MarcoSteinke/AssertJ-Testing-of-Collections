@@ -1,11 +1,10 @@
 package business.database;
 
-import business.Email;
+import business.EmailAddress;
 import business.Kunde;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class KundenDatenbank {
@@ -16,8 +15,8 @@ public class KundenDatenbank {
         this.database = new HashMap<String, Kunde>();
     }
 
-    public Kunde findKundeByEmail(Email email) {
-        return this.database.get(email.getValue());
+    public Kunde findKundeByEmail(EmailAddress emailAddress) {
+        return this.database.get(emailAddress.getValue());
     }
 
     public List<Kunde> findAllKunden() {
@@ -29,6 +28,6 @@ public class KundenDatenbank {
 
     public void save(Kunde kunde) {
 
-        this.database.put(kunde.getEmail().getValue(), kunde);
+        this.database.put(kunde.getEmailAddress().getValue(), kunde);
     }
 }
