@@ -23,8 +23,10 @@ public class Main {
 
         System.out.println("Gebe alle Kunden aus:");
         List<Kunde> kunden = app.loadAllKunden();
-        for(Kunde kunde : kunden) {
+        for (Kunde kunde : kunden) {
             System.out.println(kunde);
         }
+
+        app.printMarketingMails();
     }
 }

@@ -23,13 +23,16 @@ public class MarketingMailSender {
     }
 
     public List<String> sendMarketingMails() {
-        if(MINUTES.between(lastMarketingTime, LocalTime.now()) > 60*24*30) {
+        if (this.lastMarketingTime == null)
+            this.lastMarketingTime = LocalTime.now();
+
+        if (MINUTES.between(lastMarketingTime, LocalTime.now()) > 60 * 24 * 30) {
             List<Kunde> kunden = this.kundenDatenbank.findAllKunden();
             List<String> emailNachrichten = new ArrayList<>();
 
-            if(kunden.size() > 0) {
+            if (kunden.size() > 0) {
 
-                for(Kunde kunde : kunden) {
+                for (Kunde kunde : kunden) {
                     emailNachrichten.add(this.sendMailToKunde(kunde));
                 }
             }

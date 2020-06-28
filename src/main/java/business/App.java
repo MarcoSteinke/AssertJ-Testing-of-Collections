@@ -29,6 +29,14 @@ public class App {
         return this.kundenDatenbank.findKundeByEmail(new EmailAddress(emailValue));
     }
 
+    public void printMarketingMails() {
+        List<String> kundenEmails = this.marketingMailSender.sendMarketingMails();
+
+        for (String kundenEmail : kundenEmails) {
+            System.out.println(kundenEmail + "\n-------------------------------------");
+        }
+    }
+
     public List<Kunde> loadAllKunden() {
         return this.kundenDatenbank.findAllKunden();
     }
