@@ -13,8 +13,8 @@ public class MarketingMailSender {
 
 
     private final String preparedText =
-            "Na, alles gut bei dir %s ? \n Du warst seit 30 Tagen nicht mehr aktiv, " +
-            "aus diesem Grund möchten wir dich zurück holen !";
+            "Na, alles gut bei dir %s ? \n Wir haben diesen Monat eine neue tolle Aktion für dich!";
+
     LocalTime lastMarketingTime;
     KundenDatenbank kundenDatenbank;
 
@@ -33,10 +33,11 @@ public class MarketingMailSender {
                     emailNachrichten.add(this.sendMailToKunde(kunde));
                 }
             }
-
+            this.lastMarketingTime = LocalTime.now();
             return emailNachrichten;
         }
 
+        System.out.println("Fehler: Es wurde erst kürzlich eine Mail verschickt.");
         return List.of();
     }
 
